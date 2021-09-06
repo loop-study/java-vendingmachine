@@ -1,6 +1,5 @@
 package domain;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,46 @@ public class CoinTest {
         int inputPrice = 500;
 
         //when
-        Coin coin = new Coin(500);
+        Coin coin = new Coin(inputPrice);
+
+        //then
+        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+    }
+
+    @Test
+    @DisplayName("100원 생성")
+    void create100Coin() {
+        //given
+        int inputPrice = 100;
+
+        //when
+        Coin coin = new Coin(inputPrice);
+
+        //then
+        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+    }
+
+    @Test
+    @DisplayName("50원 생성")
+    void create50Coin() {
+        //given
+        int inputPrice = 50;
+
+        //when
+        Coin coin = new Coin(inputPrice);
+
+        //then
+        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+    }
+
+    @Test
+    @DisplayName("10원 생성")
+    void create10Coin() {
+        //given
+        int inputPrice = 10;
+
+        //when
+        Coin coin = new Coin(inputPrice);
 
         //then
         assertThat(coin.getPrice()).isEqualTo(inputPrice);
