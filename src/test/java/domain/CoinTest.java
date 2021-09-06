@@ -15,10 +15,10 @@ public class CoinTest {
         int inputPrice = 500;
 
         //when
-        Coin coin = new Coin(inputPrice);
+        Coin coin = Coin.of(inputPrice);
 
         //then
-        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+        assertThat(coin.price()).isEqualTo(inputPrice);
     }
 
     @Test
@@ -28,10 +28,10 @@ public class CoinTest {
         int inputPrice = 100;
 
         //when
-        Coin coin = new Coin(inputPrice);
+        Coin coin = Coin.of(inputPrice);
 
         //then
-        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+        assertThat(coin.price()).isEqualTo(inputPrice);
     }
 
     @Test
@@ -41,10 +41,10 @@ public class CoinTest {
         int inputPrice = 50;
 
         //when
-        Coin coin = new Coin(inputPrice);
+        Coin coin = Coin.of(inputPrice);
 
         //then
-        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+        assertThat(coin.price()).isEqualTo(inputPrice);
     }
 
     @Test
@@ -54,22 +54,10 @@ public class CoinTest {
         int inputPrice = 10;
 
         //when
-        Coin coin = new Coin(inputPrice);
+        Coin coin = Coin.of(inputPrice);
 
         //then
-        assertThat(coin.getPrice()).isEqualTo(inputPrice);
+        assertThat(coin.price()).isEqualTo(inputPrice);
     }
 }
 
-class Coin {
-    final int price;
-    int count;
-
-    Coin(int price) {
-        this.price = price;
-    }
-
-    public int getPrice() {
-        return this.price;
-    }
-}
