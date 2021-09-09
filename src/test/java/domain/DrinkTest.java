@@ -13,7 +13,7 @@ public class DrinkTest {
     @DisplayName("음료수 생성")
     void createDrink() {
         //given
-        Drink drink = new Drink("사이다", 20, 2000);
+        Drink drink = new Drink("사이다", 20, 100);
 
         //then
         assertThat(drink).isNotNull();
@@ -38,7 +38,7 @@ public class DrinkTest {
     @DisplayName("최소 가격 예외 확인")
     void nagetiveMinPrice() {
         assertThatIllegalArgumentException()
-                .isThrownBy(() -> new Drink("사이다", 20, -1));
+                .isThrownBy(() -> new Drink("사이다", 20, 99));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class DrinkTest {
     void onSale() {
         Drink drink = new Drink("사이다", 20, 1000);
 
-        assertThat(drink.isSale()).isTrue();
+        assertThat(drink.isSoldOut()).isTrue();
     }
 
     @Test
@@ -61,7 +61,7 @@ public class DrinkTest {
     void notSale() {
         Drink drink = new Drink("사이다", 0, 1000);
 
-        assertThat(drink.isSale()).isFalse();
+        assertThat(drink.isSoldOut()).isFalse();
     }
 
     @Test
